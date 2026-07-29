@@ -1,0 +1,12 @@
+.brandLogoContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brandLogoShape {
+    width: 30px;
+    height: 30px;
+    background-color: var(--blue-950);
+    border-radius: var(--default-border-radius);
+}

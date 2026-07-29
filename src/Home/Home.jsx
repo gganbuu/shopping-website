@@ -1,0 +1,32 @@
+import React from 'react'
+import styles from './Home.module.css'
+import { NavigationBar } from '../ NavigationBar/NavigationBar'
+import heroCat from '../assets/heroCat.png'
+
+export const Home = () => {
+  return (
+    <>
+        <header>
+            <NavigationBar/>
+        </header>
+        <main>
+        
+          <section className={styles.heroSection}>
+            <div className={styles.heroText}>
+              <h1>
+                <span className={styles.heroBlue}>Yarn</span> — for all of your cat needs
+              </h1>
+              <h2>
+                The quick brown fox jumped over the lazy dog
+              </h2>
+            </div>
+            <img className={styles.heroCat} src={heroCat}/>
+          </section>
+
+          <section>
+            
+          </section>
+        </main>
+    </>
+  )
+}

@@ -1,0 +1,32 @@
+nav {
+    padding: 0.8rem;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.navInnerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 2560px;
+}
+
+
+/* links */
+
+.links {
+    font-family: var(--regular-font);
+    display: flex;
+    gap: 2rem;
+}
+
+.links > * {
+    all: unset;
+    cursor: pointer;
+}
+
+/* logincart */
+.loginCart {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}

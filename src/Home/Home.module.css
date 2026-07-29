@@ -1,0 +1,32 @@
+.heroSection {
+    display: flex;
+    justify-content: space-between;
+    max-width: 2560px;
+    margin: 2rem 6rem;
+}
+
+.heroText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.heroText > h1 {
+    font-size: 4rem;
+    line-height: 3.5rem;
+}
+
+.heroText > h2 {
+    font-family: var(--regular-font);
+    font-size: 1.15rem;
+    font-weight: 200;
+}
+
+.heroBlue {
+    color: var(--blue-900);
+}
+
+.heroCat {
+    width: 500px;
+}
