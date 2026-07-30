@@ -1,8 +1,16 @@
 import React from 'react';
 import styles from './About.module.css';
+import { NavigationBar } from '../ NavigationBar/NavigationBar';
 
 export const About = () => {
   return (
-    <div>About</div>
+    <>
+          <header>
+            <NavigationBar/>
+          </header>
+          <main>
+            
+          </main>
+        </>
   )
 }

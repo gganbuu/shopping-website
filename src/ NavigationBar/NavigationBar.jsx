@@ -12,13 +12,13 @@ export const NavigationBar = () => {
       <div className={styles.navInnerContainer}>
         <BrandLogo/>
         <div className={styles.links}>
-          <Link to="about">About</Link>
-          <Link to="/">Home</Link>
-          <Link to="shop">Shop</Link>
+          <Link to="about">about</Link>
+          <Link to="/">home</Link>
+          <Link to="shop">shop</Link>
         </div>
         <div className={styles.loginCart}>
           <ShoppingBag/>
-          Log In / Sign Up
+          log in / sign up
         </div>
       </div>
     </nav>

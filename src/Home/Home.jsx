@@ -14,17 +14,17 @@ export const Home = () => {
           <section className={styles.heroSection}>
             <div className={styles.heroText}>
               <h1>
-                <span className={styles.heroBlue}>Yarn</span> — for all of your cat needs
+                <span className={styles.heroBlue}>yarn</span> — for all of your cat needs
               </h1>
               <h2>
-                The quick brown fox jumped over the lazy dog
+                shop now
               </h2>
             </div>
             <img className={styles.heroCat} src={heroCat}/>
           </section>
 
           <section>
-            
+
           </section>
         </main>
     </>
