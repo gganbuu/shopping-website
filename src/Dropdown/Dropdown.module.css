@@ -1,0 +1,16 @@
+.dropDownContainer {
+    border-radius: var(--default-border-radius);
+    padding: 0.5rem 1rem;
+    background-color: #DAE8FF;
+}
+
+.dropDownName {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropDownName > button {
+    all: unset;
+    cursor: pointer;
+}
+

@@ -1,6 +1,13 @@
-.filterContainer {
+.filterContainer {    
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+
     border: 1px solid #D9D9D9;
-    border-radius: var(--default-border-radius)   
+    border-radius: var(--default-border-radius);
+    
+    /* temporary */
+    height: 1000px; 
+    
 }
