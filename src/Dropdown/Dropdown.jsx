@@ -13,10 +13,10 @@ const Dropdown = ({name, children}) => {
 
     return (
         <div className={styles.dropDownContainer}>
-            <div className={styles.dropDownName}>
+            <label htmlFor={name} className={styles.dropDownName}>
                 <h3>{name}</h3>
-                <button onClick={handleOpen}>{!open ? <DropDownIcon/> : <MinusIcon/>}</button>
-            </div>
+                <button aria-label={name} onClick={handleOpen}>{!open ? <DropDownIcon/> : <MinusIcon/>}</button>
+            </label>
             {open && children}
         </div>
     )

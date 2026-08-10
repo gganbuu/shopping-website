@@ -1,10 +1,16 @@
 import React from 'react'
 import styles from './CardsContainer.module.css'
+import Card from './Card'
 
-const CardsContainer = () => {
+
+// just for creating styling 
+
+const CardsContainer = ({cats}) => {
   return (
     <div className={styles.cardsContainer}>
-        CardsContainer
+      {cats.map(cat => {
+        return <Card key={cat.id} cat={cat}></Card>
+      })}
     </div>
   )
 }

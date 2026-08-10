@@ -1,0 +1,33 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blue-300);
+    border-radius: var(--default-border-radius);
+    padding: 1.5rem;
+    max-height: 370px; 
+}
+
+.cardContainer > img {
+    max-width: 300px;
+    border-radius: var(--default-border-radius);
+}
+
+.nameBreed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonContainer > button {
+    all: unset;
+    cursor: pointer;
+    background-color: var(--blue-800);
+    color: var(--blue-300);
+    border-radius: var(--default-border-radius);
+    
+}

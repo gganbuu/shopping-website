@@ -1,0 +1,25 @@
+high level user view for breed filter
+1. user opens dropdown and breed filter
+2. user selects filter checkbox
+3. cards update to match the selection which user has chosen
+
+high level implemenetation for filter
+1. usestate filters in shop to contain a list of filters which user has checked
+    - filters contains empty array []
+
+2. checked filters are 'mapped' against cats state to created filteredCats
+    - unchecked filters are removed from filters
+
+3. when filters length is greater than 1, cardscontainer cats prop changes from cat usestate
+   to filteredCats usestate
+    - When no filters are avaiable, filter length == 0, cat prop changes back to regular usestate
+
+- benefits (to using hooks rather than using API queries for filtering and searching);
+    1. greater responsiveness, user will see changes immediately when applying filters
+- cons
+    1. scalability affected 
+        - if considerably more cats are added into the database, implemenetation
+            runs the risk of being slow as every filter added triggers re-render of card container
+
+            
+
