@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from "react-router";
-
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
+import { NavigationBar } from './NavigationBar/NavigationBar';
 import { Home } from './Home/Home';
 import { About } from './About/About';
 import { Adopt } from './Adopt/Adopt';
@@ -11,35 +11,76 @@ import { CatPage } from './CatPage/CatPage';
 import { Cart } from './Cart/Cart';
 import './index.css'
 
-
+const Layout = () => {
+  return (
+    <>
+      <header>
+        <NavigationBar/>
+      </header>
+      <Outlet/>
+    </>
+  )
+}
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home/>
-  },
-  {
-    path: "about",
-    element: <About/>
-  },
-  {
-    path: "adopt",
-    element: <Adopt/>,
-    loader: () => getCats(),
-  },
-  {
-    path: "adopt/:catName",
-    element: <CatPage/>,
-    loader: ({ params }) => getCat(params.catName),
-  },
-  {
-    path: "cart",
-    element: <Cart/>
+    element: <Layout/>,
+    children: [
+      {
+        index: true,
+        element: <Home/>
+      },
+      {
+        path: "about",
+        element: <About/>
+      },
+      {
+        path: "adopt",
+        element: <Adopt/>,
+        loader: () => getCats(),
+      },
+      {
+        path: "adopt/:catName",
+        element: <CatPage/>,
+        loader: ({ params }) => getCat(params.catName),
+      },
+      {
+        path: "cart",
+        element: <Cart/>
+      }
+    ]
   }
 ])
+
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Home/>
+//   },
+//   {
+//     path: "about",
+//     element: <About/>
+//   },
+//   {
+//     path: "adopt",
+//     element: <Adopt/>,
+//     loader: () => getCats(),
+//   },
+//   {
+//     path: "adopt/:catName",
+//     element: <CatPage/>,
+//     loader: ({ params }) => getCat(params.catName),
+//   },
+//   {
+//     path: "cart",
+//     element: <Cart/>
+//   }
+// ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router}></RouterProvider>
   </StrictMode>,
 )
+

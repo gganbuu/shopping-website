@@ -6,9 +6,6 @@ import heroCat from '../assets/heroCat.png'
 export const Home = () => {
   return (
     <>
-        <header>
-            <NavigationBar/>
-        </header>
         <main>
         
           <section className={styles.heroSection}>

@@ -5,11 +5,7 @@ import { NavigationBar } from '../NavigationBar/NavigationBar';
 export const About = () => {
   return (
     <>
-          <header>
-            <NavigationBar/>
-          </header>
           <main>
-            
           </main>
         </>
   )

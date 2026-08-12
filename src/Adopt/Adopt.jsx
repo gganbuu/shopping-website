@@ -19,9 +19,6 @@ export const Adopt = () => {
 
   return (
     <div className={styles.shopPage}>
-      <header>
-        <NavigationBar data-testid="navigationbar"/>
-      </header>
       <main className={styles.shopSection}>
         <FilterBar cats={cats} filtersDispatch={filtersDispatch} filtersState={filtersState}/>
         <CardsContainer cats={filteredCats}/>
