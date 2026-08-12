@@ -7,7 +7,7 @@
     max-height: 370px; 
 }
 
-.cardContainer > img {
+.cardImage {
     max-width: 300px;
     border-radius: var(--default-border-radius);
 }

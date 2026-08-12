@@ -4,9 +4,14 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 
 import { Home } from './Home/Home';
 import { About } from './About/About';
-
+import { Adopt } from './Adopt/Adopt';
+import { getCats } from './Adopt/getCats';
+import {getCat} from './CardsContainer/getCat'
+import { CatPage } from './CatPage/CatPage';
+import { Cart } from './Cart/Cart';
 import './index.css'
-import { Shop } from './Shop/Shop';
+
+
 
 const router = createBrowserRouter([
   {
@@ -18,9 +23,19 @@ const router = createBrowserRouter([
     element: <About/>
   },
   {
-    path: "shop",
-    element: <Shop/>
+    path: "adopt",
+    element: <Adopt/>,
+    loader: () => getCats(),
   },
+  {
+    path: "adopt/:catName",
+    element: <CatPage/>,
+    loader: ({ params }) => getCat(params.catName),
+  },
+  {
+    path: "cart",
+    element: <Cart/>
+  }
 ])
 
 createRoot(document.getElementById('root')).render(

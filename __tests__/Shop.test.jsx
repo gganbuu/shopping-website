@@ -1,9 +1,10 @@
 
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent} from "@testing-library/react";
 import { Shop } from "../src/Shop/Shop";
 import { MemoryRouter } from "react-router";
 import { getCats } from "../src/Shop/getCats";
+import userEvent from "@testing-library/user-event"
 
 
 const dummyData = [{ name: 'Milo', breed: 'Tabby', description: 'Loves naps in sunny spots', colour: 'Orange', cost: 50, image_url: 'http://localhost:3001/images/milo_cropped.jpg' },
@@ -23,7 +24,7 @@ beforeEach(() => {
 describe("test breed and colour" , () => {
     it("test that checks cat cards are rendered", async () => {
         render(<MemoryRouter><Shop/></MemoryRouter>);
-
+        
         // findBy waits for the getCats promise to resolve and the cards to render
         expect(await screen.findByText('Milo!')).toBeInTheDocument();
         expect(screen.getByText('Luna!')).toBeInTheDocument();
@@ -110,10 +111,48 @@ describe("test breed and colour" , () => {
 })
 
 describe("test price and age", () => {
-    test("test that price lower bound correctly filters")
-    render(<MemoryRouter><Shop/></MemoryRouter>)
+    test("test that price lower bound correctly filters", async () => {
+        render(<MemoryRouter><Shop/></MemoryRouter>)
 
-    await findByText('Luna')
+        await findByText('Luna')
+        
+        await userEvent.click(screen.getByRole('button', { name: "price"}))
+        await userEvent.click(screen.getByRole('input', {name: "price-from"}))
+        await userEvent.keyboard('70')
 
-    fireEvent.click(screen.getByRole('button', {name: 'price'}))
+        expect(screen.queryByText('Luna!')).toBeInTheDocument();
+        expect(screen.queryByText('Oliver!')).toBeInTheDocument();
+        expect(screen.queryByText('Milo!')).not.toBeInTheDocument();
+    })
+
+    test("test that price upper bound correctly filters", async () => {
+        render(<MemoryRouter><Shop/></MemoryRouter>)
+
+        await findByText('Luna')
+        
+        await userEvent.click(screen.getByRole('button', { name: "price"}))
+        await userEvent.click(screen.getByRole('input', {name: "price-to"}))
+        await userEvent.keyboard('80')
+
+        expect(screen.queryByText('Luna!')).toBeInTheDocument();
+        expect(screen.queryByText('Milo!')).toBeInTheDocument();
+        expect(screen.queryByText('Oliver!')).not.toBeInTheDocument();
+    })
+
+    test("test that price upper bound and lowerbound correctly filters", async () => {
+        render(<MemoryRouter><Shop/></MemoryRouter>)
+
+        await findByText('Luna')
+        
+        await userEvent.click(screen.getByRole('button', { name: "price"}))
+        await userEvent.click(screen.getByRole('input', {name: "price-to"}))
+        await userEvent.keyboard('80')
+        await userEvent.click(screen.getByRole('input', {name: "price-from"}))
+        await userEvent.keyboard('55')
+
+        expect(screen.queryByText('Luna!')).not.toBeInTheDocument();
+        expect(screen.queryByText('Milo!')).toBeInTheDocument();
+        expect(screen.queryByText('Oliver!')).not.toBeInTheDocument();
+    })
 })
+

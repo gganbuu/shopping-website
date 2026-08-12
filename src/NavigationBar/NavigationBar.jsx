@@ -14,7 +14,7 @@ export const NavigationBar = () => {
         <div className={styles.links}>
           <Link to="../about">about</Link>
           <Link to="/">home</Link>
-          <Link to="../shop">shop</Link>
+          <Link to="../adopt">adopt</Link>
         </div>
         <div className={styles.loginCart}>
           <ShoppingBag/>

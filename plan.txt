@@ -3,7 +3,7 @@ high level user view for breed filter
 2. user selects filter checkbox
 3. cards update to match the selection which user has chosen
 
-high level implemenetation for filter
+high level implemenetation for colour/breed filter
 1. usestate filters in shop to contain a list of filters which user has checked
     - filters contains empty array []
 
@@ -22,4 +22,15 @@ high level implemenetation for filter
             runs the risk of being slow as every filter added triggers re-render of card container
 
             
+high level implementation for price/age filter
+0. add the max and min values for price and age to filters state as both:
+    - the starting value which is displayed to the user
+    - and the max or min value which the user can input 
+
+1. upon user changing either filter in the drop down (from input or to input) the state 
+   within filter must changes
+
+2. number filters are mapped against cat state with others filters to 
+   create filteredCat.
+    - if price/age filter[0] and filter[1] are both not 0, include them to be filterd.
 

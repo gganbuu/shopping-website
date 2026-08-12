@@ -1,0 +1,72 @@
+.catPageSection {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.returnButton {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    align-items: start;
+    justify-self: flex-start;
+}
+
+.catPageContainer {
+    background-color: #8bb5ff;
+    padding: 2rem;
+    gap: 2rem;
+    border-radius: var(--default-border-radius);
+    align-self: center;
+    justify-content: center;
+    display: flex;
+}
+
+.catImage {
+    width: 600px;
+    height: 500px;
+    border-radius: var(--default-border-radius);
+}
+
+.catDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.catDetails div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.catDetails h1 {
+    font-size: 3rem;
+}
+
+.catDetails h2 {
+    font-size: 2rem;
+}
+
+.regularFont {
+    all: unset;
+    font-size: 20px;
+    font-family: var(--regular-font)
+}
+
+.buttonContainer {
+    align-self: end;
+}
+.addToCart {
+    all: unset;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--default-border-radius);
+    background-color: #061a5d;
+    color: #8bb5ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
