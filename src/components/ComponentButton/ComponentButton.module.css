@@ -1,0 +1,7 @@
+.styledButton {
+    all: unset;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: var(--default-border-radius);
+    background-color: var(--blue-200)
+}

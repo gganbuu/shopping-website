@@ -4,9 +4,11 @@ import { getCat, getCats} from '../../services/getCat.js';
 import { Trash } from 'lucide-react';
 import Card from '../../components/CardsContainer/Card';
 import { CartContext, CartDispatchContext } from '../../context/CartContext.jsx';
+import { ComponentButton } from '../../components/ComponentButton/ComponentButton.jsx';
 
 export const Cart = () => {
     const cartState = useContext(CartContext)
+    const cartDispatch = useContext(CartDispatchContext)
 
     const [cats, setCats] = useState([])
 
@@ -34,7 +36,10 @@ export const Cart = () => {
     return (
         <main className={styles.cartContainer}>
             <div className={styles.adoptionCart}>
-                <h1>Adoption Cart</h1>
+                <div className={styles.titleAndButtonContainer}>
+                    <h1>Adoption Cart</h1>
+                    <ComponentButton name="clear cart" handleClick={() => cartDispatch({type: "cleared-all"})}/>
+                </div>
                 {cats.map(cat => <AdoptionCard key={cat.name} cat={cat}/>)}
             </div>
             <div className={styles.checkOut}>

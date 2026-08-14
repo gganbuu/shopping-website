@@ -3,7 +3,6 @@ import styles from './FilterBar.module.css'
 
 import Dropdown from '../Dropdown/Dropdown'
 import RangeInput from '../RangeInput/RangeInput'
-import { SearchInput } from '../SearchInput/SearchInput'
 import CheckboxContainer from '../CheckboxContainer/CheckboxContainer'
 
 import { useEffect } from 'react'
@@ -50,7 +49,6 @@ export default function FilterBar({cats, filtersDispatch, filtersState}) {
   }  
   return (
     <div className={styles.filterContainer}>
-        <SearchInput/>
     
         <h3>filters</h3>
 

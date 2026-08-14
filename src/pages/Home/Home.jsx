@@ -13,7 +13,7 @@ export const Home = () => {
                 <span className={styles.heroBlue}>yarn</span> — for all of your cat needs
               </h1>
               <h2>
-                shop now
+                adopt now
               </h2>
             </div>
             <img className={styles.heroCat} src={heroCat}/>

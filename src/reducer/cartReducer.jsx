@@ -12,7 +12,7 @@ export const cartReducer = (state, action) => {
             return newState.filter(name => name != action.name)
         }
         case "cleared-all": {
-            return []
+            return cartInitialState
         }
     }
 } 

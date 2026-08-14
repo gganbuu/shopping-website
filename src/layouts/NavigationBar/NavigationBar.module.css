@@ -12,7 +12,6 @@ nav {
 
 
 /* links */
-
 .links {
     font-family: var(--regular-font);
     display: flex;
@@ -25,8 +24,30 @@ nav {
 }
 
 /* logincart */
+.loginCart > * {
+    all: unset;
+}
+
 .loginCart {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
+
+.shoppingBagContainer {
+    cursor: pointer;
+    position: relative;
+}
+
+.shoppingBagCount {
+    position: absolute;
+    background-color: red;
+    border-radius: var(--default-border-radius);
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    right: -10px;
+    top: -10px;
+    z-index: 1;
+}
+
