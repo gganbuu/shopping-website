@@ -1,0 +1,94 @@
+.cartContainer {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 250px;
+    max-width: 1800px;
+}
+
+.adoptionCart, .checkOut {
+    border-radius: var(--default-border-radius);
+    border: 1px solid #D9D9D9;
+    padding: 2rem 2rem;
+}
+
+.adoptionCart {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkOut {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 1rem;
+    flex: 3;
+}
+
+.adoptionCardContainer {
+    border-radius: var(--default-border-radius);
+    background-color: #8bb5ff;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.adoptionCardInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.adoptionCardInfo img {
+    border-radius: var(--default-border-radius);
+    max-width: 150px;
+    max-height: 125px;
+}
+
+.adoptionCardImageName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cartContainer span {
+    font-size: 1.4rem;
+}
+
+.adoptionCardContainer button {
+    all: unset;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+.subTotalContainer { 
+    display: grid;
+    grid-template: repeat(4, 1fr) / 5fr 1fr;
+    row-gap: 1rem;
+}
+.GSTTitle, .GSTValue {
+    font-size: 1.3rem;
+    color: grey;
+}
+
+.GSTValue {
+    text-align: right;
+}
+
+.GSTTitle {
+    padding-left: 1rem;
+}
+
+.cartContainer hr {
+    border: 1px dashed #D9D9D9
+}
+
+.totalContainer {
+    display: flex;
+    justify-content: space-between;
+}

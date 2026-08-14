@@ -34,3 +34,11 @@ high level implementation for price/age filter
    create filteredCat.
     - if price/age filter[0] and filter[1] are both not 0, include them to be filterd.
 
+
+high level implementation for shopping cart functionality
+
+
+
+todo
+- actually code filter from scratch
+- add an error window

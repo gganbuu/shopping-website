@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './Home.module.css'
-import { NavigationBar } from '../NavigationBar/NavigationBar';
-import heroCat from '../assets/heroCat.png'
+import heroCat from '../../assets/heroCat.png'
 
 export const Home = () => {
   return (

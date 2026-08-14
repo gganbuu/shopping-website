@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrandLogo } from '../BrandLogo/BrandLogo'
+import { BrandLogo } from '../../components/BrandLogo/BrandLogo'
 import styles from './NavigationBar.module.css'
 
 import { ShoppingBag } from 'lucide-react'
@@ -17,7 +17,7 @@ export const NavigationBar = () => {
           <Link to="../adopt">adopt</Link>
         </div>
         <div className={styles.loginCart}>
-          <ShoppingBag/>
+          <Link to="../cart"><ShoppingBag/></Link>
           log in / sign up
         </div>
       </div>

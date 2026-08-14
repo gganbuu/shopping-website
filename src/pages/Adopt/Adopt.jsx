@@ -1,10 +1,9 @@
 import React from 'react'
 import styles from './Adopt.module.css';
-import { NavigationBar } from '../NavigationBar/NavigationBar.jsx';
-import FilterBar from '../FilterBar/FilterBar.jsx';
-import CardsContainer from '../CardsContainer/CardsContainer.jsx';
+import FilterBar from '../../components/FilterBar/FilterBar.jsx';
+import CardsContainer from '../../components/CardsContainer/CardsContainer.jsx';
 import { filterCats } from './filterCats.js';
-import { filtersInitialState, filtersReducer } from './filtersReducer.jsx';
+import { filtersInitialState, filtersReducer } from '../../hooks/filtersReducer.jsx';
 
 import { useEffect, useState, useReducer } from 'react';
 import { useLoaderData } from 'react-router';

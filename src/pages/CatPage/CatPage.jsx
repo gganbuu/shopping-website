@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './CatPage.module.css'
 import { useLoaderData } from 'react-router'
 import { CornerDownLeft } from 'lucide-react'
-import { NavigationBar } from '../NavigationBar/NavigationBar'
 import { Link } from 'react-router'
 import { Plus } from 'lucide-react'
 
@@ -10,9 +9,6 @@ export const CatPage = () => {
     const cat = useLoaderData();
     return (
         <div className={styles.catPage}>
-            <header>
-                <NavigationBar/>
-            </header>
             <main className={styles.catPageSection}>
                 <Link to='/adopt' className={styles.returnButton}>
                     <CornerDownLeft />

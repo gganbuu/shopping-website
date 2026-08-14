@@ -1,4 +1,4 @@
-export const getCats = async () => {
+export const getAllCats = async () => {
   const url = "http://localhost:3001/adopt";
   try {
     const response = await fetch(url)
