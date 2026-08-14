@@ -76,10 +76,6 @@
     color: grey;
 }
 
-.GSTValue {
-    text-align: right;
-}
-
 .GSTTitle {
     padding-left: 1rem;
 }
@@ -89,6 +85,6 @@
 }
 
 .totalContainer {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template: 1fr / 5fr 1fr;
 }

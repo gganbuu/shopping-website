@@ -1,15 +1,18 @@
-import React, { useEffect, useState, useReducer } from 'react'
-import { cartReducer, cartInitialState } from './cartReducer.js'
+import React, { useEffect, useState, useContext } from 'react'
 import styles from './Cart.module.css';
 import { getCat, getCats} from '../../services/getCat.js';
 import { Trash } from 'lucide-react';
 import Card from '../../components/CardsContainer/Card';
+import { CartContext, CartDispatchContext } from '../../context/CartContext.jsx';
 
 export const Cart = () => {
-    const [cartState, cartDispatch] = useReducer(cartReducer, cartInitialState)
+    const cartState = useContext(CartContext)
+
     const [cats, setCats] = useState([])
+
     const subTotal = cats.map(cat => cat.price)
                          .reduce((acc, curr) => acc + curr, 0);
+
     const GST = subTotal * 0.1;
     const handlingFees = 10;
     const miscFees = 5;
@@ -56,6 +59,7 @@ export const Cart = () => {
 }
 
 const AdoptionCard = ({cat}) => {
+    const cartDispatch = useContext(CartDispatchContext)
     return (
         <div className={styles.adoptionCardContainer}>
             <div className={styles.adoptionCardInfo}>
@@ -65,7 +69,7 @@ const AdoptionCard = ({cat}) => {
                 </div>
                 <span>$ {cat.price}</span>
             </div>
-            <button><Trash/></button>
+            <button onClick={() => cartDispatch({type: "removed-item", name: cat.name})}><Trash/></button>
         </div>
     )
 }
