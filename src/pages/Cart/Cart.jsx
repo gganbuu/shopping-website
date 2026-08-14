@@ -5,6 +5,7 @@ import { Trash } from 'lucide-react';
 import Card from '../../components/CardsContainer/Card';
 import { CartContext, CartDispatchContext } from '../../context/CartContext.jsx';
 import { ComponentButton } from '../../components/ComponentButton/ComponentButton.jsx';
+import { API_URL } from '../../services/config'
 
 export const Cart = () => {
     const cartState = useContext(CartContext)
@@ -69,7 +70,7 @@ const AdoptionCard = ({cat}) => {
         <div className={styles.adoptionCardContainer}>
             <div className={styles.adoptionCardInfo}>
                 <div className={styles.adoptionCardImageName}>
-                    <img src={cat.image_url} alt={cat.name}/>
+                    <img src={`${API_URL}${cat.image_url}`} alt={cat.name}/>
                     <h2>{cat.name}</h2>
                 </div>
                 <span>$ {cat.price}</span>

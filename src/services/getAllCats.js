@@ -1,5 +1,7 @@
+import { API_URL } from './config'
+
 export const getAllCats = async () => {
-  const url = "http://localhost:3001/adopt";
+  const url = `${API_URL}/adopt`;
   try {
     const response = await fetch(url)
     if (!response.ok) {

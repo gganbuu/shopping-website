@@ -1,5 +1,7 @@
+import { API_URL } from './config'
+
 export const getCat = async (name) => {
-    const url = `http://localhost:3001/adopt/${name}` 
+    const url = `${API_URL}/adopt/${name}` 
     try {
         const response = await fetch(url)
         if (!response.ok) {

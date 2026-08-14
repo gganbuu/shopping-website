@@ -4,7 +4,7 @@ import { Plus } from 'lucide-react'
 import { Link } from 'react-router'
 import { useContext } from 'react'
 import { CartContext, CartDispatchContext } from '../../context/CartContext'
-
+import { API_URL } from '../../services/config'
 
 const Card = ({cat, disabled}) => {
   const cartDispatch = useContext(CartDispatchContext)
@@ -14,7 +14,7 @@ const Card = ({cat, disabled}) => {
     <div className={styles.cardContainer}>
       <Link to={`../adopt/${cat.name}`}>
         <img className={styles.cardImage}
-        src={cat.image_url} 
+        src={`${API_URL}${cat.image_url}`} 
         alt={cat.name}/>
       </Link>
       <div className={styles.nameBreed}>

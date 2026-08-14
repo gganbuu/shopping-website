@@ -6,6 +6,8 @@ import { Link } from 'react-router'
 import { Plus } from 'lucide-react'
 import { CartContext, CartDispatchContext } from '../../context/CartContext'
 
+import { API_URL } from '../../services/config'
+
 export const CatPage = () => {
     const cat = useLoaderData();
     const cartDispatch = useContext(CartDispatchContext);
@@ -16,10 +18,10 @@ export const CatPage = () => {
             <main className={styles.catPageSection}>
                 <Link to='/adopt' className={styles.returnButton}>
                     <CornerDownLeft />
-                </Link>
+                </Link> 
                 <section className={styles.catPageContainer}>
                     <img className={styles.catImage}
-                    src={cat.image_url}/>
+                    src={`${API_URL}${cat.image_url}`}/>
                     <article className={styles.catDetails}>
                         <h1>{cat.name}</h1>
                         <div>
