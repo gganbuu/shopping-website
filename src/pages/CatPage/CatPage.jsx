@@ -4,11 +4,13 @@ import { useLoaderData } from 'react-router'
 import { CornerDownLeft } from 'lucide-react'
 import { Link } from 'react-router'
 import { Plus } from 'lucide-react'
-import { CartDispatchContext } from '../../context/CartContext'
+import { CartContext, CartDispatchContext } from '../../context/CartContext'
 
 export const CatPage = () => {
     const cat = useLoaderData();
-    const cartDispatch = useContext(CartDispatchContext)
+    const cartDispatch = useContext(CartDispatchContext);
+    const cartState = useContext(CartContext);
+    const cardSetState = new Set([...cartState]);
     return (
         <div className={styles.catPage}>
             <main className={styles.catPageSection}>
@@ -43,7 +45,9 @@ export const CatPage = () => {
 
                         <div className={styles.buttonContainer}>
                             <h2 className={styles.regularFont}>adopt</h2>
-                            <button className={styles.addToCart}
+                            <button 
+                                    className={styles.addToCart}
+                                    disabled={cardSetState.has(cat.name)}
                                     onClick={() => cartDispatch({type:"added-item", name: cat.name})}>
                                 <Plus/>
                             </button>

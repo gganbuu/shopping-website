@@ -57,6 +57,7 @@
 .buttonContainer {
     align-self: end;
 }
+
 .addToCart {
     all: unset;
     cursor: pointer;
@@ -70,3 +71,7 @@
     justify-content: center;
 }
 
+.buttonContainer > button:disabled {
+    cursor: default;
+    background-color: grey;
+}
